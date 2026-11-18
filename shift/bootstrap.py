@@ -4,6 +4,7 @@ from os import PathLike
 import sqlite3
 
 from device.journal import create_device_schema
+from device.recovery import create_recovery_schema
 from handover.archive import create_report_schema
 from inspection.receipts import create_receipt_schema
 from sampling.bookings import create_booking_schema
@@ -16,6 +17,7 @@ def initialize_workspace(db: sqlite3.Connection) -> None:
         create_calendar_schema(db)
         create_booking_schema(db)
         create_device_schema(db)
+        create_recovery_schema(db)
         create_receipt_schema(db)
         create_report_schema(db)
 
